@@ -48,8 +48,9 @@
   &__acc-cash {
     font-size: 14px;
     color: $blue;
+    text-align: left;
   }
-}
+} /* header-top */
 
 .header-menu {
   &__body {
@@ -99,4 +100,4 @@
     border: none;
     border-radius: 22px;
   }
-}
+} /* header-menu */
