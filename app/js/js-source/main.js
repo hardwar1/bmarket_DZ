@@ -6,6 +6,7 @@ $(function () {
     $('.header__nav-inner').slideToggle();
     $(this).toggleClass('burger__opened');
   });
+  
   //ibg
   function ibg() {
     document.querySelectorAll(".ibg").forEach(el => {
