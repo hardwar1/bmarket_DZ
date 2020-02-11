@@ -1,0 +1,199 @@
+.header-top {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+
+  &__bg {
+    background-color: $bg-milky;
+  }
+
+  &__become {
+    display: inline-block;
+    padding: 4px 17px;
+    margin-right: 50px;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 28px;
+    color: #fff;
+    background-color: $blue;
+    border-radius: 17px;
+  }
+
+  &__account-info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 22px;
+    border-radius: 50%;
+  }
+
+  &__acc-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgb(51, 51, 51);
+  }
+
+  &__acc-cash {
+    font-size: 14px;
+    color: $blue;
+    text-align: left;
+  }
+
+  @media (max-width: 635px) {
+    & {
+      flex-direction: column;
+      padding-bottom: 15px;
+    }
+
+    &__logo {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &__become {
+      order: 2;
+      margin: 0;
+    }
+
+    &__account-info {
+      margin-bottom: 10px;
+    }
+  }
+} /* header-top */
+
+.header-menu {
+  &__body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+  }
+
+  @media (max-width: 950px) {
+    &__body {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+
+    &__search-wrapper {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 629px) {
+    &__search-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__search-wrapper {
+      display: block;
+    }
+  }
+} /* header-menu */
+
+.menu {
+  display: none;
+
+  &__link {
+    display: inline-block;
+    margin-right: 34px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 42px;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  &__search-bar {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__input {
+    width: 360px;
+    height: 46px;
+    padding: 0 75px 0 22px;
+    font-size: 15px;
+    line-height: 30px;
+    border: 1px solid rgb(217, 223, 229);
+    border-radius: 22px;
+
+    &::placeholder {
+      color: #898f96;
+    }
+  }
+
+  &__search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background-color: $blue;
+    border: none;
+    border-radius: 22px;
+  }
+
+  @media (max-width: 950px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 950px) {
+    &__input {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 629px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 290px;
+    background-color: $bg-milky;
+    transform: translateY(100%);
+
+    &__link {
+      width: 100%;
+      font-size: 17px;
+      border-top: 1px solid #ccc;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 4px 0;
+      }
+    }
+
+    &__input {
+      width: 390px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__input {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 630px) {
+    display: block;
+  }
+} /* header-menu  menu */

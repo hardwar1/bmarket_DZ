@@ -1,0 +1,192 @@
+.main-screen {
+  position: relative;
+  min-height: 725px;
+  padding: 180px 0 150px;
+  color: #f3f3f8;
+  background: rgb(45, 81, 209);
+  background:
+    linear-gradient (
+      90deg,
+      rgba(45, 81, 209, 1) 0%,
+      rgba(45, 81, 209, 1) 0%,
+      rgba(9, 47, 186, 1) 100%,
+      rgba(9, 47, 186, 1) 100%
+    );
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 700;
+
+    div {
+      font-weight: 400;
+    }
+  }
+
+  &__text {
+    margin-bottom: 68px;
+    font-size: 20px;
+  }
+
+  &__btn {
+    margin: 15px;
+  }
+
+  &__search-block {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1142px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+    transform: translate(-50%, 50%);
+
+    &-shadow1,
+    &-shadow2 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 10;
+      width: 97%;
+      height: 26px;
+      background-color: #fff;
+      border-radius: 6px 6px 0 0;
+      opacity: 0.5;
+      transform: translate(-50%, -50%);
+    }
+
+    &-shadow2 {
+      width: 94%;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  &__search-inner {
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 104px;
+    padding: 0 40px;
+    background-color: #fff;
+    border-radius: 6px;
+  }
+
+  &__search-input {
+    width: 100%;
+    max-width: 615px;
+    height: 55px;
+    padding-left: 26px;
+    font-size: 16px;
+    color: #555;
+    background: none;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 4px 0 0 4px;
+
+    &::placeholder {
+      color: #676767;
+    }
+  }
+
+  &__search-select {
+    position: relative;
+
+    select {
+      display: block;
+      height: 55px;
+      padding-right: 40px;
+      padding-left: 20px;
+      margin-left: -1px;
+      font-size: 16px;
+      background: none;
+      border: 1px solid rgb(220, 220, 220);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      /* автопрефиксер в рот взял,
+      поэтому вручную прописал */
+      appearance: none;
+      border-radius: 0 4px 4px 0;
+    }
+
+    &::after {
+      position: absolute;
+      right: 20px;
+      bottom: 50%;
+      z-index: 50;
+      display: block;
+      width: 13px;
+      height: 8px;
+      pointer-events: none;
+      content: "";
+      background-image: url(../images/content/chevron-down.png);
+      transform: translateY(50%);
+    }
+  }
+
+  &__search-btn {
+    width: 100%;
+    max-width: 223px;
+    height: 55px;
+    padding: 0 20px;
+    margin-left: 30px;
+    background-color: $blue;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 1000px) {
+    min-height: 0;
+    padding-top: 100px;
+  }
+
+  @media (max-width: 850px) {
+    &__search-block {
+      transform: translate(-50%, 75%);
+    }
+
+    &__search-inner {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: 208px;
+      padding: 0 15px;
+    }
+
+    &__search-input {
+      max-width: 1000px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @media (max-width: 590px) {
+    &__search-block {
+      &-shadow1 {
+        width: 90%;
+      }
+
+      &-shadow2 {
+        width: 80%;
+      }
+    }
+    &__search-inner {
+      justify-content: center;
+    }
+
+    &__search-select {
+      order: -1;
+      width: 320px;
+      margin-bottom: 15px;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    &__search-btn {
+      max-width: 1000px;
+      margin-left: 0;
+    }
+  }
+}
