@@ -2,8 +2,8 @@ $(function () {
   //весь код писать внутри что бы дом загрузился первым
 
 
-  $('.header__burger').on('click', function () {
-    $('.header__nav-inner').slideToggle();
+  $('.burger').on('click', function () {
+    $('.menu').slideToggle();
     $(this).toggleClass('burger__opened');
   });
   
