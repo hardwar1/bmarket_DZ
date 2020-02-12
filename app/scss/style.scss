@@ -1,7 +1,12 @@
-@import "libs";
-@import "vars";
-@import "fonts";
-@import "global";
+/* почему такой инклуд?
+потому что автопрефиксер
+галпа петух недоделанный
+не префиксит код обычным @import"global"
+*/
+@@include('./_libs.scss');
+@@include('./_vars.scss');
+@@include('./_fonts.scss');
+@@include('./_global.scss');
 
 .btn {
   padding: 19px 31px;
@@ -17,6 +22,6 @@
   }
 }
 
-@import "header";
-@import "main-screen";
-@import "media";
+@@include('./_header.scss');
+@@include('./_main-screen.scss');
+@@include('./_media.scss');

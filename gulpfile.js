@@ -4,9 +4,10 @@ let gulp = require('gulp'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   del = require('del'),
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('gulp-autoprefixer'),
+  babel = require('gulp-babel');
 const gulpStylelint = require('gulp-stylelint');
-const babel = require('gulp-babel');
+const fileinclude = require('gulp-file-include');
 
 gulp.task('clean', async function () {
   del.sync('dist')
@@ -14,6 +15,10 @@ gulp.task('clean', async function () {
 
 gulp.task('scss', function () {
   return gulp.src('app/scss/**/*.scss')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 8 versions']
     }))
